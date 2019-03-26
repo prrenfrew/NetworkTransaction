@@ -8,7 +8,8 @@ This framework makes network calls and setup easy. It makes use of Decodable pro
                    DESC
   spec.license      = "MIT"
   spec.author       = "Paul Renfrew, Jr."
-  spec.platform     = :ios
+  spec.platform     = :ios, "8.0"
+  spec.swift_version = "4.2"
   spec.source       = { :git => "https://github.com/prrenfrew/NetworkTransaction.git", :tag => 'master' }
   spec.source_files = "NetworkTransaction/**/*.swift"
   spec.homepage     = "https://github.com/prrenfrew/NetworkTransaction"
