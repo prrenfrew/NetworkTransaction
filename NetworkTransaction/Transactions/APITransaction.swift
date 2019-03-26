@@ -11,6 +11,10 @@ import Foundation
 public struct APITransaction<T: Decodable> {
     let configuration: ServiceConfiguration
     
+    public init(configuration: ServiceConfiguration) {
+        self.configuration = configuration
+    }
+    
     public func startService(_ completionHandler: ((T?, Error?) -> Void)?) {
         completionHandler?(nil, nil)
     }

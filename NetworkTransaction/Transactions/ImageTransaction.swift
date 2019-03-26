@@ -11,6 +11,10 @@ import Foundation
 public struct ImageTransaction {
     let configuration: ServiceConfiguration
     
+    public init(configuration: ServiceConfiguration) {
+        self.configuration = configuration
+    }
+    
     func getImage(_ completionHandler: ((UIImage?, Error?) -> Void)?) {
         ImageNetworkManager().startTask(with: self.configuration, completionHandler)
     }
