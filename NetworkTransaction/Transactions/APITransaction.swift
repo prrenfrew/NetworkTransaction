@@ -1,0 +1,17 @@
+//
+//  APITransaction.swift
+//  NetworkTransaction
+//
+//  Created by MAC on 3/26/19.
+//  Copyright © 2019 PaulRenfrew. All rights reserved.
+//
+
+import Foundation
+
+public struct APITransaction<T: Decodable> {
+    let configuration: ServiceConfiguration
+    
+    public func startService(_ completionHandler: ((T?, Error?) -> Void)?) {
+        completionHandler?(nil, nil)
+    }
+}
