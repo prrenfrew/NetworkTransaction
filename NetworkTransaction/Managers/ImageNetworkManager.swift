@@ -21,7 +21,7 @@ extension URLSession {
                 } catch let parsingError {
                     completionHandler?(nil, parsingError)
                 }
-            }
+            }.resume()
         } catch let requestError {
             completionHandler?(nil, requestError)
         }
