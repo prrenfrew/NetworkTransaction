@@ -15,7 +15,7 @@ public struct ImageTransaction {
         self.configuration = configuration
     }
     
-    func getImage(_ completionHandler: ((UIImage?, Error?) -> Void)?) {
+    public func getImage(_ completionHandler: ((UIImage?, Error?) -> Void)?) {
         ImageNetworkManager().startTask(with: self.configuration, completionHandler)
     }
 }
