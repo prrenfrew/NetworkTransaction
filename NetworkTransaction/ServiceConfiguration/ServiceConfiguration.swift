@@ -22,7 +22,7 @@ public protocol ServiceConfiguration {
 
 extension ServiceConfiguration {
     func toRequest() -> URLRequest? {
-        var stringUrl = self.scheme.rawValue + baseURL
+        var stringUrl = self.scheme.rawValue + self.baseURL
         if let unwrappedEndpoint = self.endpoint {
             stringUrl += unwrappedEndpoint
         }
@@ -41,6 +41,7 @@ extension ServiceConfiguration {
                                  timeoutInterval: self.timeout)
         request.httpBody = self.body
         request.allHTTPHeaderFields = self.headers
+        request.httpMethod = self.method.rawValue
         return request
     }
 }
