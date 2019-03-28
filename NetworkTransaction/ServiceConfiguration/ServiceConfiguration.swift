@@ -22,7 +22,7 @@ public protocol ServiceConfiguration {
 
 extension ServiceConfiguration {
     func toRequest() -> URLRequest? {
-        var stringUrl = self.scheme.rawValue + self.baseURL
+        var stringUrl = self.scheme.rawValue + "://" + self.baseURL
         if let unwrappedEndpoint = self.endpoint {
             stringUrl += unwrappedEndpoint
         }
