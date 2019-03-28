@@ -16,6 +16,6 @@ public struct APITransaction<T: Decodable> {
     }
     
     public func startService(_ completionHandler: ((T?, Error?) -> Void)?) {
-        completionHandler?(nil, nil)
+        URLSession.shared.startTask(with: self.configuration, completionHandler)
     }
 }

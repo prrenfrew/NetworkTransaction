@@ -8,11 +8,11 @@
 
 import Foundation
 
-final class NetworkManager {
+extension URLSession {
     func startTask<T: Decodable>(with configuration: ServiceConfiguration, _ completionHandler: ((T?, Error?) -> Void)?) {
         do {
             let request = try self.getValidRequest(configuration: configuration)
-            URLSession.shared.dataTask(with: request) { [unowned self] (data, response, error) in
+            self.dataTask(with: request) { [unowned self] (data, response, error) in
                 do {
                     try self.checkNoError(error: error, response: response)
                     let validData = try self.getValidData(data: data)

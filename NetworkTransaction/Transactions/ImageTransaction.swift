@@ -16,6 +16,6 @@ public struct ImageTransaction {
     }
     
     public func getImage(_ completionHandler: ((UIImage?, Error?) -> Void)?) {
-        ImageNetworkManager().startTask(with: self.configuration, completionHandler)
+        URLSession.shared.startTask(with: self.configuration, completionHandler)
     }
 }

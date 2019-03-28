@@ -8,11 +8,11 @@
 
 import Foundation
 
-final class ImageNetworkManager {
+extension URLSession {
     func startTask(with configuration: ServiceConfiguration, _ completionHandler: ((UIImage?, Error?) -> Void)?) {
         do {
             let request = try self.getValidRequest(configuration: configuration)
-            URLSession.shared.dataTask(with: request) { [unowned self] (data, response, error) in
+            self.dataTask(with: request) { [unowned self] (data, response, error) in
                 do {
                     try self.checkNoError(error: error, with: response)
                     let validData = try self.getValidData(data: data)
