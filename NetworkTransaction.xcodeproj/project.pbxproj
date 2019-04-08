@@ -17,6 +17,8 @@
 		0438C61A224AB18700FBB81A /* ImageNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438C619224AB18700FBB81A /* ImageNetworkManager.swift */; };
 		0438C61C224AB19200FBB81A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438C61B224AB19200FBB81A /* NetworkManager.swift */; };
 		0438C61F224AB22800FBB81A /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438C61E224AB22800FBB81A /* NetworkManagerError.swift */; };
+		0457B199225B783400ECAF9C /* BasicImageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457B198225B783400ECAF9C /* BasicImageConfiguration.swift */; };
+		0457B19B225B79CF00ECAF9C /* BasicGetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457B19A225B79CF00ECAF9C /* BasicGetConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		0438C619224AB18700FBB81A /* ImageNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkManager.swift; sourceTree = "<group>"; };
 		0438C61B224AB19200FBB81A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0438C61E224AB22800FBB81A /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
+		0457B198225B783400ECAF9C /* BasicImageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicImageConfiguration.swift; sourceTree = "<group>"; };
+		0457B19A225B79CF00ECAF9C /* BasicGetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGetConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 		0438C60E224AA89900FBB81A /* ServiceConfigurationExamples */ = {
 			isa = PBXGroup;
 			children = (
+				0457B198225B783400ECAF9C /* BasicImageConfiguration.swift */,
+				0457B19A225B79CF00ECAF9C /* BasicGetConfiguration.swift */,
 			);
 			path = ServiceConfigurationExamples;
 			sourceTree = "<group>";
@@ -265,10 +271,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0438C61C224AB19200FBB81A /* NetworkManager.swift in Sources */,
+				0457B199225B783400ECAF9C /* BasicImageConfiguration.swift in Sources */,
 				0438C611224AA8F900FBB81A /* ImageTransaction.swift in Sources */,
 				0438C613224AA90600FBB81A /* APITransaction.swift in Sources */,
 				0438C617224AA95A00FBB81A /* Enums.swift in Sources */,
 				0438C61A224AB18700FBB81A /* ImageNetworkManager.swift in Sources */,
+				0457B19B225B79CF00ECAF9C /* BasicGetConfiguration.swift in Sources */,
 				0438C61F224AB22800FBB81A /* NetworkManagerError.swift in Sources */,
 				0438C615224AA91700FBB81A /* ServiceConfiguration.swift in Sources */,
 			);

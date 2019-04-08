@@ -10,10 +10,10 @@ import Foundation
 
 public protocol ServiceConfiguration {
     var baseURL: String { get }
-    var scheme: HTTPProtocol { get }
+    var scheme: HTTPProtocol? { get }
     var endpoint: String? { get }
     var method: HTTPVerb { get }
-    var parameters: [String: String]? { get }
+    var parameters: [URLQueryItem]? { get }
     var body: Data? { get }
     var cachePolicy: URLRequest.CachePolicy { get }
     var timeout: TimeInterval { get }
@@ -22,18 +22,18 @@ public protocol ServiceConfiguration {
 
 extension ServiceConfiguration {
     func toRequest() -> URLRequest? {
-        var stringUrl = self.scheme.rawValue + "://" + self.baseURL
+        var stringUrl = ""
+        if let schemeValue = self.scheme?.rawValue {
+            stringUrl += schemeValue + "://"
+        }
+        stringUrl += self.baseURL
         if let unwrappedEndpoint = self.endpoint {
             stringUrl += unwrappedEndpoint
         }
-        if let unwrappedParameters = self.parameters {
-            if !unwrappedParameters.isEmpty {
-                stringUrl += "?"
-            }
-            for (paramKey, paramValue) in unwrappedParameters {
-                stringUrl += "\(paramKey)=\(paramValue)&"
-            }
-            stringUrl = String(stringUrl.dropLast())
+        
+        if var urlComponents = URLComponents(string: stringUrl), let parameters = self.parameters {
+            urlComponents.queryItems = parameters
+            stringUrl = urlComponents.string ?? stringUrl
         }
         guard let serviceUrl = URL(string: stringUrl) else { return nil }
         var request = URLRequest(url: serviceUrl,
