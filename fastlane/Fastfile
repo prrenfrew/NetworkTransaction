@@ -36,7 +36,7 @@ platform :ios do
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
-  # end
+  end
 
   # desc "Deploy a new version to the App Store"
   # lane :release do
